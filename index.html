@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DailyBrief — Daily News &amp; Perspective</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;0,6..72,700;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-top">
+      <div class="edition-label">EDITION: GLOBAL &bull; 100% PRE-FED NEWS &bull; NO API REQUIRED</div>
+      <div id="date" class="masthead-date">Today</div>
+    </div>
+    <div class="masthead-main">
+      <a href="#" class="logo">dailybrief<span>.</span></a>
+      <div class="tagline">Independent Curiosity &bull; Informed Perspective</div>
+      <button type="button" id="savedStoriesBtn" class="saved-stories-btn">
+        <span>🔖 Saved</span>
+        <span id="savedCount" class="badge">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero-editorial">
+      <p class="eyebrow">STAY CURIOUS &bull; STAY INFORMED</p>
+      <h1>The world,<br><i>in perspective.</i></h1>
+      <p class="hero-desc">Curated headlines and in-depth analyses across global technology, science, business, and culture.</p>
+    </section>
+
+    <!-- Controls Row: Categories & Search -->
+    <section class="controls-bar">
+      <div class="categories" id="categories">
+        <button type="button" class="cat-btn active" data-cat="general">Top Stories</button>
+        <button type="button" class="cat-btn" data-cat="technology">Technology</button>
+        <button type="button" class="cat-btn" data-cat="business">Business</button>
+        <button type="button" class="cat-btn" data-cat="science">Science</button>
+        <button type="button" class="cat-btn" data-cat="health">Health</button>
+        <button type="button" class="cat-btn" data-cat="sports">Sports</button>
+      </div>
+
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input id="newsSearch" type="text" placeholder="Search headlines..." autocomplete="off">
+        <button type="button" id="clearSearch" class="clear-search-btn" hidden>&times;</button>
+      </div>
+    </section>
+
+    <div class="status-row">
+      <span id="notice" class="notice">Loading top stories...</span>
+    </div>
+
+    <!-- Articles Grid -->
+    <section id="articles" class="articles"></section>
+
+    <!-- Empty State -->
+    <div id="noArticles" class="empty-news" hidden>
+      <div class="empty-icon">📰</div>
+      <h3>No articles match your query</h3>
+      <p>Try searching for different keywords or reset category filters.</p>
+      <button type="button" id="resetNewsBtn" class="reset-news-btn">Show Top Stories</button>
+    </div>
+  </main>
+
+  <!-- Article Reader Modal -->
+  <div id="articleModal" class="modal-backdrop" hidden>
+    <div class="article-modal-card">
+      <button type="button" class="modal-close" id="modalClose" aria-label="Close article">&times;</button>
+      <article class="article-modal-content" id="modalContent">
+        <!-- Injected via JS -->
+      </article>
+    </div>
+  </div>
+
+  <footer class="app-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">dailybrief<span>.</span></div>
+      <p>Independent curiosity. Informed perspective. Designed and built with pure HTML, CSS &amp; JS.</p>
+      <div class="footer-copy">&copy; <span id="year"></span> DailyBrief Editorial Desk</div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
